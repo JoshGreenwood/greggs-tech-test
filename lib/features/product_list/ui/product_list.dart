@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:greggs_sausage_roll/core/decimal_extensions.dart';
 
 import '../../../components/thumbnail_image.dart';
 import '../../../theme/spacing.dart';
@@ -38,8 +39,7 @@ class ProductList extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(product.name),
-                Text(product.eatOutPrice
-                    .toStringAsFixed(2)), //TODO: format price
+                Text(product.eatOutPrice.formatted),
               ],
             ),
           )

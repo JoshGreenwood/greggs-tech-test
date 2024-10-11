@@ -9,6 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   cupertino_icons: ^1.0.8
   flutter_bloc: ^8.1.6
   freezed_annotation: ^2.4.4
@@ -17,6 +19,7 @@ dependencies:
   json_serializable: ^6.8.0
   http: ^1.2.2
   cached_network_image: ^3.4.1
+  intl: ^0.19.0
 
 dev_dependencies:
   flutter_test:
@@ -32,12 +35,13 @@ flutter:
   uses-material-design: true
   assets:
     - assets/json/
+  generate: true
+
 
 targets:
   $default:
     builders:
       freezed:
         options:
-
           to_json: false
           from_json: false

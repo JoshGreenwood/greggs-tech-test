@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:greggs_sausage_roll/core/context_extensions.dart';
 import 'package:greggs_sausage_roll/dependency_injection.dart';
 import 'package:greggs_sausage_roll/features/product_list/presentation/product_list_cubit.dart';
 import 'package:greggs_sausage_roll/features/product_list/ui/product_list.dart';
@@ -30,7 +31,9 @@ class _ProductListViewState extends State<ProductListView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          title: Text(context.localizations.pageTitle),
+        ),
         body: BlocBuilder<ProductListCubit, ProductListState>(builder: _build));
   }
 

@@ -12,6 +12,10 @@ class ThemeFactory {
         progressIndicatorTheme: const ProgressIndicatorThemeData(
           color: AppColours.primaryHighlight,
         ),
-        appBarTheme: AppBarTheme(color: AppColours.primary));
+        appBarTheme: const AppBarTheme(
+            color: AppColours.primary,
+            titleTextStyle: TextStyle(
+              fontSize: 20,
+            )));
   }
 }
