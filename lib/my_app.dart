@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff00558f)),
         useMaterial3: true,
       ),
-      home: const ProductListView(),
+      home: ProductListView.wrapped(),
     );
   }
 }

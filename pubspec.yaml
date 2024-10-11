@@ -15,6 +15,7 @@ dependencies:
   get_it: ^8.0.0
   decimal: ^3.0.2
   json_serializable: ^6.8.0
+  http: ^1.2.2
 
 dev_dependencies:
   flutter_test:
@@ -22,8 +23,20 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   build_runner: ^2.4.13
   freezed: ^2.5.7
+  test: ^1.25.7
+  bloc_test: ^9.1.7
+  mockito: ^5.4.4
 
 flutter:
   uses-material-design: true
   assets:
     - assets/json/
+
+targets:
+  $default:
+    builders:
+      freezed:
+        options:
+
+          to_json: false
+          from_json: false
