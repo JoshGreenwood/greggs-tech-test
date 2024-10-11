@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:greggs_sausage_roll/theme/theme_factory.dart';
 
 import 'features/product_list/ui/product_list_view.dart';
 
@@ -10,10 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Sausage Roll',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff00558f)),
-        useMaterial3: true,
-      ),
+      theme: ThemeFactory.build(),
       home: ProductListView.wrapped(),
     );
   }

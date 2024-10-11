@@ -9,11 +9,10 @@ class FileProductDataSource {
     final String response =
         await rootBundle.loadString('assets/json/sausage_roll.json');
     final decoded = await json.decode(response) as List<dynamic>;
-
-    final products = decoded
-        .map((response) =>
-            ProductResponse.fromJson(response as Map<String, dynamic>))
-        .toList();
+    final products = decoded.map(_responseFromJson).toList();
     return Result.success(products);
   }
+
+  ProductResponse _responseFromJson(dynamic response) =>
+      ProductResponse.fromJson(response as Map<String, dynamic>);
 }
