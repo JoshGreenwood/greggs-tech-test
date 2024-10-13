@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:greggs_sausage_roll/core/context_extensions.dart';
 import 'package:greggs_sausage_roll/core/decimal_extensions.dart';
-import 'package:greggs_sausage_roll/features/product_list/ui/product_detail_view.dart';
+import 'package:greggs_sausage_roll/features/product_list/ui/product_detail/product_detail_view.dart';
 
-import '../../../components/thumbnail_image.dart';
+import '../../../components/image_panel.dart';
 import '../../../theme/spacing.dart';
 import '../domain/product.dart';
 
@@ -34,7 +34,7 @@ class ProductList extends StatelessWidget {
             horizontal: Spacing.page, vertical: Spacing.s),
         child: Row(
           children: [
-            ThumbnailImage(
+            ImagePanel(
               uri: product.thumbnailUri,
               label: product.name,
               width: 100,
