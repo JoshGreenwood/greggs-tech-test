@@ -6,17 +6,17 @@ import '../theme/app_colours.dart';
 class ThumbnailImage extends StatelessWidget {
   final String uri;
   final String label;
-
+  final double width;
   const ThumbnailImage({
     super.key,
     required this.uri,
     required this.label,
+    required this.width,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 100,
         decoration: BoxDecoration(
             color: AppColours.background,
             borderRadius: BorderRadius.circular(16)),
@@ -24,7 +24,7 @@ class ThumbnailImage extends StatelessWidget {
             label: label,
             child: CachedNetworkImage(
               imageUrl: uri,
-              width: 100,
+              width: width,
             )));
   }
 }

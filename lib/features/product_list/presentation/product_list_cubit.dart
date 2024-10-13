@@ -16,7 +16,6 @@ class ProductListCubit extends Cubit<ProductListState> {
 
   Future<void> load() async {
     emit(const ProductListState.loading());
-    await Future.delayed(Duration(seconds: 3));
     final products = await _fetchProducts();
 
     switch (products) {

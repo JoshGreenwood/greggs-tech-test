@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:greggs_sausage_roll/core/context_extensions.dart';
 import 'package:greggs_sausage_roll/core/decimal_extensions.dart';
+import 'package:greggs_sausage_roll/features/product_list/ui/product_detail_view.dart';
 
 import '../../../components/thumbnail_image.dart';
 import '../../../theme/spacing.dart';
@@ -24,26 +26,31 @@ class ProductList extends StatelessWidget {
 
   Widget? _buildItem(BuildContext context, int index) {
     final product = products[index];
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-          horizontal: Spacing.page, vertical: Spacing.s),
-      child: Row(
-        children: [
-          ThumbnailImage(
-            uri: product.thumbnailUri,
-            label: product.name,
-          ),
-          Spacing.hm,
-          Flexible(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(product.name),
-                Text(product.eatOutPrice.formatted),
-              ],
+    return GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTap: () => context.push(ProductDetailView(product: product)),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+            horizontal: Spacing.page, vertical: Spacing.s),
+        child: Row(
+          children: [
+            ThumbnailImage(
+              uri: product.thumbnailUri,
+              label: product.name,
+              width: 100,
             ),
-          )
-        ],
+            Spacing.hm,
+            Flexible(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(product.name),
+                  Text(product.eatOutPrice.formatted),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

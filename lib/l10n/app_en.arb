@@ -1,3 +1,12 @@
 {
-  "pageTitle": "Sausage Rolls"
+  "pageTitle": "Sausage Rolls",
+  "addToCart": "Add to Basket - {price}",
+  "@addToCart": {
+    "placeholders": {
+      "price": {
+        "type": "String",
+        "example": "£1.20"
+      }
+    }
+  }
 }
