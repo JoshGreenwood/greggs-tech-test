@@ -22,8 +22,8 @@ class TextBadge extends StatelessWidget {
       child: Center(
           child: Text(
         text,
-        style:
-            context.textTheme.titleMedium?.copyWith(color: AppColours.primary),
+        style: context.textTheme.titleMedium
+            ?.copyWith(color: AppColours.primary, fontWeight: FontWeight.w600),
       )),
     );
   }

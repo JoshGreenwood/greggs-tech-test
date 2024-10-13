@@ -14,7 +14,7 @@ class ThemeFactory {
       ),
       appBarTheme: const AppBarTheme(
           color: AppColours.primary,
-          titleTextStyle: TextStyle(fontSize: 20),
+          titleTextStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
           iconTheme: IconThemeData(color: Colors.white)),
       outlinedButtonTheme: const OutlinedButtonThemeData(
         style: ButtonStyle(
