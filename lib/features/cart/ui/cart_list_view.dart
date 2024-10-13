@@ -42,7 +42,7 @@ class CartListView extends StatelessWidget {
   Widget _buildListItem(MapEntry<Product, int> cartItem) {
     final badge = TextBadge(
       text: cartItem.value.toString(),
-      size: 24,
+      size: 32,
     );
     return ProductListItem(product: cartItem.key, action: badge);
   }

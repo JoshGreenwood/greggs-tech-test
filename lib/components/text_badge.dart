@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:greggs_sausage_roll/core/context_extensions.dart';
+import 'package:greggs_sausage_roll/theme/app_colours.dart';
 
 class TextBadge extends StatelessWidget {
   final String text;
@@ -6,7 +8,7 @@ class TextBadge extends StatelessWidget {
   const TextBadge({
     super.key,
     required this.text,
-    required this.size,
+    this.size = 24,
   });
 
   @override
@@ -15,10 +17,14 @@ class TextBadge extends StatelessWidget {
       width: size,
       height: size,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(size),
-        color: Colors.green,
-      ),
-      child: Center(child: Text(text)),
+          borderRadius: BorderRadius.circular(size),
+          color: AppColours.secondary),
+      child: Center(
+          child: Text(
+        text,
+        style:
+            context.textTheme.titleMedium?.copyWith(color: AppColours.primary),
+      )),
     );
   }
 }

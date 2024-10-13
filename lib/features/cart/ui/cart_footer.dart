@@ -20,7 +20,7 @@ class CartFooter extends StatelessWidget {
           children: [
             Expanded(
               flex: 2,
-              child: ElevatedButton(
+              child: OutlinedButton(
                   onPressed: () => _emptyCart(context),
                   child: Text(context.localizations.clearCart)),
             ),
