@@ -20,6 +20,7 @@ ProductResponse _$ProductResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ProductResponse {
+  String get articleCode => throw _privateConstructorUsedError;
   String get articleName => throw _privateConstructorUsedError;
   String get customerDescription => throw _privateConstructorUsedError;
   @DecimalResponseConverter()
@@ -44,7 +45,8 @@ abstract class $ProductResponseCopyWith<$Res> {
       _$ProductResponseCopyWithImpl<$Res, ProductResponse>;
   @useResult
   $Res call(
-      {String articleName,
+      {String articleCode,
+      String articleName,
       String customerDescription,
       @DecimalResponseConverter() Decimal eatOutPrice,
       String thumbnailUri,
@@ -66,6 +68,7 @@ class _$ProductResponseCopyWithImpl<$Res, $Val extends ProductResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? articleCode = null,
     Object? articleName = null,
     Object? customerDescription = null,
     Object? eatOutPrice = null,
@@ -73,6 +76,10 @@ class _$ProductResponseCopyWithImpl<$Res, $Val extends ProductResponse>
     Object? imageUri = null,
   }) {
     return _then(_value.copyWith(
+      articleCode: null == articleCode
+          ? _value.articleCode
+          : articleCode // ignore: cast_nullable_to_non_nullable
+              as String,
       articleName: null == articleName
           ? _value.articleName
           : articleName // ignore: cast_nullable_to_non_nullable
@@ -106,7 +113,8 @@ abstract class _$$ProductResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String articleName,
+      {String articleCode,
+      String articleName,
       String customerDescription,
       @DecimalResponseConverter() Decimal eatOutPrice,
       String thumbnailUri,
@@ -126,6 +134,7 @@ class __$$ProductResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? articleCode = null,
     Object? articleName = null,
     Object? customerDescription = null,
     Object? eatOutPrice = null,
@@ -133,6 +142,10 @@ class __$$ProductResponseImplCopyWithImpl<$Res>
     Object? imageUri = null,
   }) {
     return _then(_$ProductResponseImpl(
+      articleCode: null == articleCode
+          ? _value.articleCode
+          : articleCode // ignore: cast_nullable_to_non_nullable
+              as String,
       articleName: null == articleName
           ? _value.articleName
           : articleName // ignore: cast_nullable_to_non_nullable
@@ -161,7 +174,8 @@ class __$$ProductResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ProductResponseImpl implements _ProductResponse {
   const _$ProductResponseImpl(
-      {required this.articleName,
+      {required this.articleCode,
+      required this.articleName,
       required this.customerDescription,
       @DecimalResponseConverter() required this.eatOutPrice,
       required this.thumbnailUri,
@@ -170,6 +184,8 @@ class _$ProductResponseImpl implements _ProductResponse {
   factory _$ProductResponseImpl.fromJson(Map<String, dynamic> json) =>
       _$$ProductResponseImplFromJson(json);
 
+  @override
+  final String articleCode;
   @override
   final String articleName;
   @override
@@ -184,7 +200,7 @@ class _$ProductResponseImpl implements _ProductResponse {
 
   @override
   String toString() {
-    return 'ProductResponse(articleName: $articleName, customerDescription: $customerDescription, eatOutPrice: $eatOutPrice, thumbnailUri: $thumbnailUri, imageUri: $imageUri)';
+    return 'ProductResponse(articleCode: $articleCode, articleName: $articleName, customerDescription: $customerDescription, eatOutPrice: $eatOutPrice, thumbnailUri: $thumbnailUri, imageUri: $imageUri)';
   }
 
   @override
@@ -192,6 +208,8 @@ class _$ProductResponseImpl implements _ProductResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ProductResponseImpl &&
+            (identical(other.articleCode, articleCode) ||
+                other.articleCode == articleCode) &&
             (identical(other.articleName, articleName) ||
                 other.articleName == articleName) &&
             (identical(other.customerDescription, customerDescription) ||
@@ -206,8 +224,8 @@ class _$ProductResponseImpl implements _ProductResponse {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, articleName, customerDescription,
-      eatOutPrice, thumbnailUri, imageUri);
+  int get hashCode => Object.hash(runtimeType, articleCode, articleName,
+      customerDescription, eatOutPrice, thumbnailUri, imageUri);
 
   /// Create a copy of ProductResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -228,7 +246,8 @@ class _$ProductResponseImpl implements _ProductResponse {
 
 abstract class _ProductResponse implements ProductResponse {
   const factory _ProductResponse(
-      {required final String articleName,
+      {required final String articleCode,
+      required final String articleName,
       required final String customerDescription,
       @DecimalResponseConverter() required final Decimal eatOutPrice,
       required final String thumbnailUri,
@@ -237,6 +256,8 @@ abstract class _ProductResponse implements ProductResponse {
   factory _ProductResponse.fromJson(Map<String, dynamic> json) =
       _$ProductResponseImpl.fromJson;
 
+  @override
+  String get articleCode;
   @override
   String get articleName;
   @override

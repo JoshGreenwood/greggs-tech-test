@@ -8,6 +8,7 @@ part 'product_response.g.dart';
 @freezed
 class ProductResponse with _$ProductResponse {
   const factory ProductResponse({
+    required String articleCode,
     required String articleName,
     required String customerDescription,
     @DecimalResponseConverter() required Decimal eatOutPrice,

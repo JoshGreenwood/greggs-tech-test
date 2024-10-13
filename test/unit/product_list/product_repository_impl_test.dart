@@ -30,7 +30,8 @@ void main() {
           customerDescription: 'description',
           eatOutPrice: Decimal.fromJson('1.20'),
           thumbnailUri: '',
-          imageUri: '');
+          imageUri: '',
+          articleCode: '');
 
       when(dataSource.fetch())
           .thenAnswer((_) async => Result.success([response]));
@@ -43,7 +44,8 @@ void main() {
             description: 'description',
             eatOutPrice: Decimal.fromJson('1.20'),
             thumbnailUri: '',
-            imageUri: '')
+            imageUri: '',
+            code: '')
       ];
 
       expect((result as SuccessResult).value, actual);

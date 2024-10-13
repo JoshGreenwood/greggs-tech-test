@@ -14,4 +14,8 @@ class CartCubit extends Cubit<CartState> {
     final cart = state.cart.addProduct(product);
     emit(CartState(cart: cart));
   }
+
+  void emptyCart() {
+    emit(const CartState(cart: Cart()));
+  }
 }

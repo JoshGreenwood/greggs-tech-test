@@ -16,6 +16,12 @@ class Cart with _$Cart {
   Cart removeProduct(Product product) =>
       copyWith(items: List.from(items)..remove(product));
 
+  Map<Product, int> get countedItems =>
+      items.fold<Map<Product, int>>({}, (productCounts, product) {
+        return productCounts
+          ..update(product, (count) => count + 1, ifAbsent: () => 1);
+      });
+
   Decimal get totalPrice => items.fold(Decimal.zero,
       (previousValue, element) => previousValue + element.eatOutPrice);
 

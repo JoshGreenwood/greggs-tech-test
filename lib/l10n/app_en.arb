@@ -1,5 +1,8 @@
 {
   "pageTitle": "Sausage Rolls",
+  "cartPageTitle": "Your Cart",
+  "addItem": "Add",
+  "clearCart": "Empty Cart",
   "addToCart": "Add to Basket - {price}",
   "@addToCart": {
     "placeholders": {
@@ -11,6 +14,16 @@
   },
   "viewCart": "View Cart - {price}",
   "@viewCart": {
+    "placeholders": {
+      "price": {
+        "type": "String",
+        "example": "£1.20"
+      }
+    }
+  },
+
+  "checkout": "Checkout - {price}",
+  "@checkout": {
     "placeholders": {
       "price": {
         "type": "String",

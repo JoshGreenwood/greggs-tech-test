@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:greggs_sausage_roll/core/context_extensions.dart';
-import 'package:greggs_sausage_roll/core/decimal_extensions.dart';
+import 'package:greggs_sausage_roll/features/cart/presentation/cart_cubit.dart';
 import 'package:greggs_sausage_roll/features/product_list/ui/product_detail/product_detail_view.dart';
 
-import '../../../components/image_panel.dart';
-import '../../../theme/spacing.dart';
+import '../../../components/product_list_item.dart';
 import '../domain/product.dart';
 
 class ProductList extends StatelessWidget {
@@ -24,37 +24,22 @@ class ProductList extends StatelessWidget {
     );
   }
 
-  Widget? _buildItem(BuildContext context, int index) {
+  Widget _buildItem(BuildContext context, int index) {
     final product = products[index];
-    return GestureDetector(
-      behavior: HitTestBehavior.opaque,
-      onTap: () =>
-          context.push<void>((_) => ProductDetailView(product: product)),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: Spacing.page, vertical: Spacing.s),
-        child: Row(
-          children: [
-            ImagePanel(
-              uri: product.thumbnailUri,
-              label: product.name,
-              width: 100,
-            ),
-            Spacing.hm,
-            Flexible(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(product.name),
-                  Text(product.eatOutPrice.formatted),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
+    return ProductListItem(
+      product: product,
+      onTap: (product) => _showDetail(context, product),
+      action: ElevatedButton(
+          onPressed: () => _addItem(context, product),
+          child: Text(context.localizations.addItem)),
     );
   }
+
+  void _addItem(BuildContext context, Product product) =>
+      context.read<CartCubit>().addProduct(product);
+
+  Future<void> _showDetail(BuildContext context, Product product) =>
+      context.push<void>((_) => ProductDetailView(product: product));
 
   Widget _buildSeparator(BuildContext context, int index) {
     return const Divider(height: 1);

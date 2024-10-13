@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:greggs_sausage_roll/core/context_extensions.dart';
 import 'package:greggs_sausage_roll/core/decimal_extensions.dart';
+import 'package:greggs_sausage_roll/features/cart/ui/cart_list_view.dart';
 
 import '../../../components/text_badge.dart';
 import '../../../theme/app_colours.dart';
@@ -16,7 +17,7 @@ class CartPreviewView extends StatelessWidget {
     return BlocBuilder<CartCubit, CartState>(
       builder: (context, state) {
         return AnimatedSwitcher(
-          duration: const Duration(milliseconds: 300),
+          duration: const Duration(milliseconds: 400),
           transitionBuilder: _animationBuilder,
           child: state.cart.itemCount == 0
               ? const SizedBox.shrink()
@@ -29,7 +30,8 @@ class CartPreviewView extends StatelessWidget {
                       color: AppColours.primary,
                       borderRadius: BorderRadius.circular(16)),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () =>
+                        context.push<void>((context) => const CartListView()),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

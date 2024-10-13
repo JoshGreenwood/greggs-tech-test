@@ -6,6 +6,7 @@ part 'product.freezed.dart';
 @freezed
 class Product with _$Product {
   const factory Product({
+    required String code,
     required String name,
     required String description,
     required Decimal eatOutPrice,

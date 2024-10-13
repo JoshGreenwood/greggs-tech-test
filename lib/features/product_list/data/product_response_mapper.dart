@@ -13,6 +13,7 @@ class ProductResponseMapper
             eatOutPrice: response.eatOutPrice,
             thumbnailUri: response.thumbnailUri,
             imageUri: response.imageUri,
+            code: response.articleCode,
           ))
       .toList();
 }

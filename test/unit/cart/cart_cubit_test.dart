@@ -14,7 +14,8 @@ void main() {
         description: 'description',
         eatOutPrice: Decimal.fromJson('1.20'),
         thumbnailUri: '',
-        imageUri: '');
+        imageUri: '',
+        code: '');
 
     setUp(() {
       cartCubit = CartCubit();
