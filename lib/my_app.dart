@@ -5,7 +5,7 @@ import 'package:greggs_sausage_roll/dependency_injection.dart';
 import 'package:greggs_sausage_roll/features/cart/presentation/cart_cubit.dart';
 import 'package:greggs_sausage_roll/theme/theme_factory.dart';
 
-import 'features/product_list/ui/product_list_view.dart';
+import 'features/product_list/ui/product_list/product_list_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

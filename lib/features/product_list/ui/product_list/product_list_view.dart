@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:greggs_sausage_roll/core/context_extensions.dart';
 import 'package:greggs_sausage_roll/dependency_injection.dart';
 import 'package:greggs_sausage_roll/features/product_list/presentation/product_list_cubit.dart';
-import 'package:greggs_sausage_roll/features/product_list/ui/product_list.dart';
+import 'package:greggs_sausage_roll/features/product_list/ui/product_list/product_list.dart';
 
-import '../../../components/loading_spinner.dart';
-import '../../cart/ui/cart_action_bar.dart';
+import '../../../../components/loading_spinner.dart';
+import '../../../cart/ui/cart_action_bar.dart';
 
 class ProductListView extends StatefulWidget {
   const ProductListView({super.key});

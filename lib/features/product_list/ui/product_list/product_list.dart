@@ -4,8 +4,8 @@ import 'package:greggs_sausage_roll/core/context_extensions.dart';
 import 'package:greggs_sausage_roll/features/cart/presentation/cart_cubit.dart';
 import 'package:greggs_sausage_roll/features/product_list/ui/product_detail/product_detail_view.dart';
 
-import '../../../components/product_list_item.dart';
-import '../domain/product.dart';
+import '../../../../components/product_list_item.dart';
+import '../../domain/product.dart';
 
 class ProductList extends StatelessWidget {
   final List<Product> products;
