@@ -31,7 +31,7 @@ void main() {
       productListCubit = ProductListCubit(fetchProducts);
     });
 
-    blocTest(
+    blocTest<ProductListCubit, ProductListState>(
       'Should have a loaded state with one product Given one product is fetched',
       build: () => productListCubit,
       setUp: () {
@@ -45,7 +45,7 @@ void main() {
       ],
     );
 
-    blocTest(
+    blocTest<ProductListCubit, ProductListState>(
       'Should have a failure state Given one product is fetched',
       build: () => productListCubit,
       setUp: () {

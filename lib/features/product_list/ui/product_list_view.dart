@@ -6,6 +6,7 @@ import 'package:greggs_sausage_roll/features/product_list/presentation/product_l
 import 'package:greggs_sausage_roll/features/product_list/ui/product_list.dart';
 
 import '../../../components/loading_spinner.dart';
+import '../../cart/ui/cart_action_bar.dart';
 
 class ProductListView extends StatefulWidget {
   const ProductListView({super.key});
@@ -31,10 +32,16 @@ class _ProductListViewState extends State<ProductListView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(context.localizations.pageTitle),
-        ),
-        body: BlocBuilder<ProductListCubit, ProductListState>(builder: _build));
+        appBar: AppBar(title: Text(context.localizations.pageTitle)),
+        body: Stack(
+          children: [
+            BlocBuilder<ProductListCubit, ProductListState>(builder: _build),
+            const Align(
+              alignment: Alignment.bottomCenter,
+              child: CartPreviewView(),
+            ),
+          ],
+        ));
   }
 
   Widget _build(BuildContext context, ProductListState state) =>

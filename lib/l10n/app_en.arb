@@ -8,5 +8,14 @@
         "example": "£1.20"
       }
     }
+  },
+  "viewCart": "View Cart - {price}",
+  "@viewCart": {
+    "placeholders": {
+      "price": {
+        "type": "String",
+        "example": "£1.20"
+      }
+    }
   }
 }
