@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:greggs_sausage_roll/features/cart/presentation/cart_cubit.dart';
 import 'package:greggs_sausage_roll/features/product_list/data/file_data_source.dart';
 import 'package:greggs_sausage_roll/features/product_list/data/product_repository_impl.dart';
 import 'package:greggs_sausage_roll/features/product_list/domain/fetch_products.dart';
@@ -11,10 +12,18 @@ class DependencyInjection {
   DependencyInjection._();
 
   static void initialise() {
+    //Data Sources
     getIt.registerLazySingleton(() => FileProductDataSource());
+
+    //Repositories
     getIt.registerLazySingleton<ProductRepository>(
         () => ProductRepositoryImpl(getIt()));
+
+    //Usecases
     getIt.registerLazySingleton(() => FetchProducts(getIt()));
+
+    //Cubits
     getIt.registerFactory(() => ProductListCubit(getIt()));
+    getIt.registerFactory(() => CartCubit());
   }
 }

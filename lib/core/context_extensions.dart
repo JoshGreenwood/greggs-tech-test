@@ -6,6 +6,8 @@ extension ContextExtensions on BuildContext {
   ThemeData get theme => Theme.of(this);
   TextTheme get textTheme => theme.textTheme;
 
-  Future<void> push(Widget widget) => Navigator.of(this)
-      .push(MaterialPageRoute<void>(builder: (context) => widget));
+  Future<T?> push<T>(WidgetBuilder builder) =>
+      Navigator.of(this).push(MaterialPageRoute<T>(builder: builder));
+
+  void pop<T>({T? result}) => Navigator.of(this).pop(result);
 }

@@ -28,7 +28,8 @@ class ProductList extends StatelessWidget {
     final product = products[index];
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
-      onTap: () => context.push(ProductDetailView(product: product)),
+      onTap: () =>
+          context.push<void>((_) => ProductDetailView(product: product)),
       child: Padding(
         padding: const EdgeInsets.symmetric(
             horizontal: Spacing.page, vertical: Spacing.s),
