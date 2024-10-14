@@ -30,5 +30,8 @@
         "example": "£1.20"
       }
     }
-  }
+  },
+  "errorTitle": "Opps! Something went wrong",
+  "retry": "Retry"
+
 }

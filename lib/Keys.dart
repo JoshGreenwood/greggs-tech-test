@@ -8,4 +8,5 @@ class Keys {
   static const detailAddProduct = ValueKey('detailAddProduct');
   static const viewCartButton = ValueKey('viewCartButton');
   static const emptyCart = ValueKey('emptyCart');
+  static const retry = ValueKey('retry');
 }

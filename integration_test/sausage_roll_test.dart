@@ -1,5 +1,6 @@
 import 'package:decimal/decimal.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:greggs_sausage_roll/core/failure.dart';
 import 'package:greggs_sausage_roll/core/result.dart';
 import 'package:greggs_sausage_roll/dependency_injection.dart';
 import 'package:greggs_sausage_roll/features/product_list/data/product_data_source.dart';
@@ -78,6 +79,19 @@ void main() {
       await robot.tapViewCart();
       await robot.tapEmptyCart();
       robot.expectViewCartIsNotVisible();
+    });
+
+    testWidgets('show error state then retry', (tester) async {
+      when(productDataSource.fetch())
+          .thenAnswer((_) async => Result.failure(IOFailure()));
+      final robot = SausageRollRobot(tester);
+      await robot.startApp();
+      robot.canSeeLabel('Opps! Something went wrong');
+
+      when(productDataSource.fetch())
+          .thenAnswer((_) async => Result.success(response));
+      await robot.tapRetry();
+      robot.expectNumberOfProducts(2);
     });
   });
 }

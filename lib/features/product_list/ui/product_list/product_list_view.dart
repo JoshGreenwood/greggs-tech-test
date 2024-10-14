@@ -5,6 +5,7 @@ import 'package:greggs_sausage_roll/dependency_injection.dart';
 import 'package:greggs_sausage_roll/features/product_list/presentation/product_list_cubit.dart';
 import 'package:greggs_sausage_roll/features/product_list/ui/product_list/product_list.dart';
 
+import '../../../../components/error_view.dart';
 import '../../../../components/loading_spinner.dart';
 import '../../../cart/ui/cart_action_bar.dart';
 
@@ -26,6 +27,10 @@ class _ProductListViewState extends State<ProductListView> {
   @override
   void initState() {
     super.initState();
+    _load();
+  }
+
+  void _load() {
     context.read<ProductListCubit>().load();
   }
 
@@ -46,6 +51,7 @@ class _ProductListViewState extends State<ProductListView> {
 
   Widget _build(BuildContext context, ProductListState state) =>
       switch (state) {
+        FailureState() => ErrorView(onRetryTapped: _load),
         LoadingState() => const LoadingSpinner(),
         LoadedState(products: final products) => RefreshIndicator(
             onRefresh: () => context.read<ProductListCubit>().load(),

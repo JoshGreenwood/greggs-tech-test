@@ -61,4 +61,15 @@ class SausageRollRobot {
     final finder = find.text('Checkout - £${price.toStringAsFixed(2)}');
     expect(finder, findsOne);
   }
+
+  void canSeeLabel(String text) {
+    final finder = find.text(text);
+    expect(finder, findsOne);
+  }
+
+  Future<void> tapRetry() async {
+    final finder = find.byKey(Keys.retry);
+    await _tester.tap(finder);
+    await _tester.pumpAndSettle();
+  }
 }
