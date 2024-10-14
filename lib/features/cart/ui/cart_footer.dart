@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:greggs_sausage_roll/Keys.dart';
 import 'package:greggs_sausage_roll/core/context_extensions.dart';
 import 'package:greggs_sausage_roll/core/decimal_extensions.dart';
 
@@ -21,6 +22,7 @@ class CartFooter extends StatelessWidget {
             Expanded(
               flex: 2,
               child: OutlinedButton(
+                  key: Keys.emptyCart,
                   onPressed: () => _emptyCart(context),
                   child: Text(context.localizations.clearCart)),
             ),

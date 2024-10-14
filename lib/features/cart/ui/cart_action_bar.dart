@@ -4,6 +4,7 @@ import 'package:greggs_sausage_roll/core/context_extensions.dart';
 import 'package:greggs_sausage_roll/core/decimal_extensions.dart';
 import 'package:greggs_sausage_roll/features/cart/ui/cart_list_view.dart';
 
+import '../../../Keys.dart';
 import '../../../components/text_badge.dart';
 import '../../../theme/app_colours.dart';
 import '../../../theme/spacing.dart';
@@ -29,25 +30,28 @@ class CartPreviewView extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: AppColours.primary,
                       borderRadius: BorderRadius.circular(16)),
-                  child: ElevatedButton(
-                    onPressed: () =>
-                        context.push<void>((context) => const CartListView()),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        const Icon(Icons.shopping_cart),
-                        Text(context.localizations
-                            .viewCart(state.cart.totalPrice.formatted)),
-                        TextBadge(
-                          text: state.cart.itemCount.toString(),
-                          size: 24,
-                        )
-                      ],
-                    ),
-                  ),
+                  child: _buildButton(context, state),
                 ),
         );
       },
+    );
+  }
+
+  Widget _buildButton(BuildContext context, CartState state) {
+    return ElevatedButton(
+      key: Keys.viewCartButton,
+      onPressed: () => context.push<void>((context) => const CartListView()),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const Icon(Icons.shopping_cart),
+          Text(context.localizations.viewCart(state.cart.totalPrice.formatted)),
+          TextBadge(
+            text: state.cart.itemCount.toString(),
+            size: 24,
+          )
+        ],
+      ),
     );
   }
 

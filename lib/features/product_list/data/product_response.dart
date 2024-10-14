@@ -5,7 +5,7 @@ import 'package:greggs_sausage_roll/core/decimal_response_converter.dart';
 part 'product_response.freezed.dart';
 part 'product_response.g.dart';
 
-@freezed
+@Freezed(fromJson: true)
 class ProductResponse with _$ProductResponse {
   const factory ProductResponse({
     required String articleCode,

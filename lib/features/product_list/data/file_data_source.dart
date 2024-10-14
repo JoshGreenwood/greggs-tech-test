@@ -2,9 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:greggs_sausage_roll/core/result.dart';
+import 'package:greggs_sausage_roll/features/product_list/data/product_data_source.dart';
 import 'package:greggs_sausage_roll/features/product_list/data/product_response.dart';
 
-class FileProductDataSource {
+class FileProductDataSource implements ProductDataSource {
+  @override
   FutureResult<List<ProductResponse>> fetch() async {
     final String response =
         await rootBundle.loadString('assets/json/sausage_roll.json');

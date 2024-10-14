@@ -1,11 +1,11 @@
 import 'package:greggs_sausage_roll/core/result.dart';
-import 'package:greggs_sausage_roll/features/product_list/data/file_data_source.dart';
+import 'package:greggs_sausage_roll/features/product_list/data/product_data_source.dart';
 import 'package:greggs_sausage_roll/features/product_list/data/product_response_mapper.dart';
 import 'package:greggs_sausage_roll/features/product_list/domain/product.dart';
 import 'package:greggs_sausage_roll/features/product_list/domain/product_repository.dart';
 
 class ProductRepositoryImpl implements ProductRepository {
-  final FileProductDataSource _dataSource;
+  final ProductDataSource _dataSource;
 
   ProductRepositoryImpl(this._dataSource);
 

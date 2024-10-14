@@ -4,6 +4,7 @@ import 'package:greggs_sausage_roll/core/context_extensions.dart';
 import 'package:greggs_sausage_roll/features/cart/presentation/cart_cubit.dart';
 import 'package:greggs_sausage_roll/features/product_list/ui/product_detail/product_detail_view.dart';
 
+import '../../../../Keys.dart';
 import '../../../../components/product_list_item.dart';
 import '../../domain/product.dart';
 
@@ -29,7 +30,8 @@ class ProductList extends StatelessWidget {
     return ProductListItem(
       product: product,
       onTap: (product) => _showDetail(context, product),
-      action: ElevatedButton(
+      trailing: ElevatedButton(
+          key: Keys.productAddListItem,
           onPressed: () => _addItem(context, product),
           child: Text(context.localizations.addItem)),
     );

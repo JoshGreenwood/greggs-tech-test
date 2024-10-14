@@ -28,9 +28,6 @@ mixin _$ProductResponse {
   String get thumbnailUri => throw _privateConstructorUsedError;
   String get imageUri => throw _privateConstructorUsedError;
 
-  /// Serializes this ProductResponse to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   /// Create a copy of ProductResponse
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -171,7 +168,7 @@ class __$$ProductResponseImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class _$ProductResponseImpl implements _ProductResponse {
   const _$ProductResponseImpl(
       {required this.articleCode,
@@ -235,13 +232,6 @@ class _$ProductResponseImpl implements _ProductResponse {
   _$$ProductResponseImplCopyWith<_$ProductResponseImpl> get copyWith =>
       __$$ProductResponseImplCopyWithImpl<_$ProductResponseImpl>(
           this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ProductResponseImplToJson(
-      this,
-    );
-  }
 }
 
 abstract class _ProductResponse implements ProductResponse {

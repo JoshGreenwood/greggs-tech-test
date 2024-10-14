@@ -44,7 +44,7 @@ class CartListView extends StatelessWidget {
       text: cartItem.value.toString(),
       size: 32,
     );
-    return ProductListItem(product: cartItem.key, action: badge);
+    return ProductListItem(product: cartItem.key, trailing: badge);
   }
 
   Widget _buildSeparator(BuildContext context, int index) {
