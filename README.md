@@ -12,12 +12,12 @@ This will generate mocks and boilerplate necessary tto run the project.
 ### Running the tests
 
 At the root of the project, run `flutter test`. To run the UI tests run `flutter test integration_test`, 
-ensure a device or emulator is on and finable by finable by flutter.
+ensure a device or emulator is on and findable by flutter.
 
 ## Approach
 
-Clean architecture is used as the basis of the project structure, keeping cocerns such as data,
-presentation, ui and domain seperate. This makes testing easy and reacting to changes in services or requirements quick.
+Clean architecture is used as the basis of the project structure, keeping concerns such as data,
+presentation, ui and domain separate. This makes testing easy and reacting to changes in services or requirements quick.
 Unit testing has been used where feasible, alongside UI tests using `integration test`.
 
 This project makes heavy use of generated code. Going forward, most of these this can become cumbersome, most of this could be changed. The addition of dart macros in the future will also alleviate any dependency on `build_runner`.
