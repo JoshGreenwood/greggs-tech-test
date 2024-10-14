@@ -14,6 +14,8 @@ This will generate mocks and boilerplate necessary tto run the project.
 At the root of the project, run `flutter test`. To run the UI tests run `flutter test integration_test`, 
 ensure a device or emulator is on and findable by flutter.
 
+## Demo
+![screenshot](docs/demo.gif)
 ## Approach
 
 Clean architecture is used as the basis of the project structure, keeping concerns such as data,
